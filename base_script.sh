@@ -10,11 +10,11 @@
 
 # Define virtual environment name and the files' names
 env_name="venv"            # Virtual environment name
-python_script="job.py"     # job's file name
+python_script="job.py"     # Your job's file name
 
 # Load important modules
 module load python/3.9     # Useful to use Python version 
-module load scipy-stack
+module load scipy-stack    # Load basic Pyton packages like numpy and scipy
 
 # Activate your virtual environment
 source "$env_name"/bin/activate
