@@ -5,7 +5,7 @@
 #SBATCH --account=def-ko1              # Keep this as it is
 #SBATCH --output=Outputs/%x-%a.out     # Outputs files will be saved in this `Outputs` folder which you need to create in the same directory that this script is in
 #SBATCH --cpus-per-task=1              # Asked CPUs per task for your job
-#SBATCH --mem=8GB # Memory per node    # Memory asked for your job
+#SBATCH --mem=8GB                      # Memory asked for your job
 #SBATCH --array=0-9                    # Send 10 jobs in parallel (you can add %value to limit to `value` jobs running simultaneously)
 #SBATCH --mail-user=<your email>       # Receive a notification when your jobs finish running
 #SBATCH --mail-type=ALL
