@@ -27,7 +27,7 @@ This section lets you use the `$SLURM_TMPDIR` variable to build a fresh new virt
 # What if you want to use GPUs ?
 In python, there are packages that are similar to `numpy` that lets you use the power of GPUs almost automatically, like `cupy` and `jax`.
 
-If you want to use the available GPUs in the IQ cluster, take a look at the `advanced_script_for_GPUs.sh` file, which is a slightly modified version of the `advanced_script.sh` file. First, we see that there is a new command at the top of the script: `#SBATCH --nodelist=cp3705`. This node is specified because the GPUs are only available on this one.
+If you want to use the available GPUs in the IQ cluster, take a look at the `advanced_script_for_GPUs.sh` file, which is a slightly modified version of the `advanced_script.sh` file. First, we see that there is a new command at the top of the script: `#SBATCH --nodelist=cp3705`. This node is specified because the GPUs are only available on this one (on the IQ cluster). If you want to work with our machine (by specifying `-p c-aphex`), there is no need to specify that node.
 
 Next, you can see that there is a section for environment variables. This one could be useful if your jobs take a lot of memory to execute, because it separates the even and odd array task ids into the 2 available GPUs in the IQ cluster. It does so by defining the `GPU_TO_USE` variable and use it to define the environment variable `CUDA_VISIBLE_DEVICE`. If your jobs don't need a big amount of memory, then you can comment out/erase those 2 lines.
 
