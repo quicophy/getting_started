@@ -12,6 +12,7 @@
 #SBATCH --mail-type=ALL
 
 
+
 # Define virtual environment name and the files' names
 env_name="venv"                           # Virtual environment name
 requirements="requirements.txt"           # File name containing the packages of the virtual environment
