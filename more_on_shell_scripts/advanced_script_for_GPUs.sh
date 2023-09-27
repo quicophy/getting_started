@@ -4,9 +4,9 @@
 #SBATCH --job-name=output              # The name of the file in which your outputs will be printed
 #SBATCH --time=01:00:00                # Time given to run your job (1 hour in this case)
 #SBATCH --account=def-ko1              # Keep this as it is
-#SBATCH --output=Outputs/%x-%a.out
+#SBATCH --output=Outputs/%x-%a.out     # Outputs files will be saved in this `Outputs` folder which you need to create in the same directory that this script is in
 #SBATCH --cpus-per-task=1              # Asked CPUs per task for your job
-#SBATCH --mem=8GB # Memory per node    # Memory asked for your job
+#SBATCH --mem=8GB                      # Memory asked for your job
 #SBATCH --array=0-9                    # Send 10 jobs in parallel (you can add %value to limit to `value` jobs running simultaneously)
 #SBATCH --mail-user=<your email>       # Receive a notification when your jobs finish running
 #SBATCH --mail-type=ALL
@@ -15,7 +15,7 @@
 # Define virtual environment name and the files' names
 env_name="venv"                           # Virtual environment name
 requirements="requirements.txt"           # File name containing the packages of the virtual environment
-python_script="job.py"  # job's file name
+python_script="job.py"                    # Your job's file name
 
 # Function to box any message in `#` symbol (message: str)
 display_boxed_message() {
