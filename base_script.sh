@@ -4,7 +4,7 @@
 #SBATCH --time=01:00:00                # Time given to run your job (1 hour in this case)
 #SBATCH --account=def-ko1              # Keep this as it is
 #SBATCH --cpus-per-task=1              # Asked CPUs per task for your job
-#SBATCH --mem=8GB # Memory per node   # Memory asked for your job
+#SBATCH --mem=8GB                      # Memory asked for your job
 #SBATCH --mail-user=<your email>       # Receive a notification when your jobs finish running
 #SBATCH --mail-type=ALL
 
@@ -15,7 +15,7 @@ env_name="venv"            # Virtual environment name
 python_script="job.py"     # Your job's file name
 
 # Load important modules
-module load python/3.9     # Useful to use Python version 
+module load python/3.9     # Load a certain Python version 
 module load scipy-stack    # Load basic Pyton packages like numpy and scipy
 
 # Activate your virtual environment
